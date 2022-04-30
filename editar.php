@@ -5,13 +5,10 @@ define('TITLE','Editar vaga');
 
 use \App\Entity\Vaga;
 
-
 //CONSULTA A VAGA
-$obVaga = Vaga::getVaga($_GET['id']);
-
+$obVaga = Vaga::getVaga($id = filter_input(INPUT_GET, 'id'));
 
 // //validação do post
-
 if (isset($_POST['titulo'])){
 
     $obVaga ->titulo = $_POST['titulo'];
